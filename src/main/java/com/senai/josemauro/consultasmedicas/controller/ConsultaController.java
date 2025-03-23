@@ -27,17 +27,25 @@ public class ConsultaController {
     }
 
     @PostMapping
-    public Consulta saveConsulta(Consulta consulta){
-        return consultaService.savePaciente(consulta);
+    public Consulta adicionaConsulta(Consulta consulta){
+        return consultaService.salvarConsulta(consulta);
+    }
+
+    @GetMapping("/paciente/{nome}")
+    public List<Consulta> buscaConsultasPaciente(@PathVariable String nome){
+        return consultaService.consultasPaciente(nome);
     }
 
     @PutMapping
-    public Consulta updateConsulta(Consulta consulta){
-        return consultaService.savePaciente(consulta);
+    public Consulta atualizaConsulta(Consulta consulta){
+        return consultaService.atualizarConsulta(consulta);
     }
 
     @DeleteMapping("/{id}")
     public void deleteConsulta(@PathVariable Integer id){
-        consultaService.deletePaciente(id);
+        consultaService.delete(id);
     }
+
+
+
 }

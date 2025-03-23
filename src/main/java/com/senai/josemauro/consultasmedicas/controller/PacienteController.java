@@ -26,11 +26,11 @@ public class PacienteController {
     public Paciente findPacienteById(@PathVariable int id){
         return pacienteService.findById(id);
     }
-    @GetMapping("/{CPF}")
+    @GetMapping("/CPF/{CPF}")
     public List<Paciente> findPacienteByCPF(@PathVariable String CPF){
         return pacienteService.findByPacienteCPF(CPF);
     }
-    @GetMapping("/{nome}")
+    @GetMapping("/nome/{nome}")
     public List<Paciente> findPacienteByNome(@PathVariable String nome){
         return pacienteService.findByPacienteNome(nome);
     }

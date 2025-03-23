@@ -22,7 +22,7 @@ public class Medico {
     private Integer crm;
 
     @OneToMany(fetch = FetchType.LAZY)
-    private List<Consulta> consultasMedico;
+    private List<Consulta> consultas;
 
     public Medico() {
     }
@@ -64,5 +64,13 @@ public class Medico {
 
     public void setCrm(Integer crm) {
         this.crm = crm;
+    }
+
+    public List<Consulta> getConsultas() {
+        return consultas;
+    }
+
+    public void setConsultas(List<Consulta> consultas) {
+        this.consultas = consultas;
     }
 }

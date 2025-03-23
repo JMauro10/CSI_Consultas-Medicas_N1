@@ -19,7 +19,7 @@ public class MedicoController {
 
     @GetMapping
     public List<Medico> findAllMedico() {
-        return medicoService.findAll();
+        return medicoService.findAllMedico();
     }
 
     @GetMapping("/{id}")
@@ -27,17 +27,17 @@ public class MedicoController {
         return medicoService.findByIdMedico(id);
     }
 
-    @GetMapping("/{especialidade}")
+    @GetMapping("/especialidade/{especialidade}")
     public List<Medico> findMedicoByEspecialidade(@PathVariable String especialidade) {
         return  medicoService.findByEspecialidade(especialidade);
     }
 
-    @GetMapping("/{nomeMedico}")
+    @GetMapping("/nome/{nomeMedico}")
     public List<Medico> findMedicoByNomeMedico(@PathVariable String nomeMedico) {
         return  medicoService.findByNomeMedico(nomeMedico);
     }
 
-    @GetMapping("/{crm}")
+    @GetMapping("/crm/{crm}")
     public List<Medico> findMedicoByCrm(@PathVariable Integer crm) {
         return  medicoService.findByCrm(crm);
     }

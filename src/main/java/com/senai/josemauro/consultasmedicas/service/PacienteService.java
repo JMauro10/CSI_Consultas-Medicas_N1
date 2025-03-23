@@ -29,10 +29,10 @@ public class PacienteService {
         return pacienteRepository.save(paciente);
     }
     public List<Paciente> findByPacienteCPF(String CPF) {
-        return pacienteRepository.findAll();
+        return pacienteRepository.findByPacienteCPF(CPF);
     }
     public List<Paciente> findByPacienteNome(String nome) {
-        return pacienteRepository.findAll();
+        return pacienteRepository.findByNomePaciente(nome);
     }
 
 }

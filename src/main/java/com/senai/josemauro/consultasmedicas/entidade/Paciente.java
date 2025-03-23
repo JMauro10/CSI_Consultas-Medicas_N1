@@ -25,7 +25,7 @@ public class Paciente {
     private String telefone;
 
     @OneToMany(fetch = FetchType.LAZY)
-    private List<Consulta> consultasPaciente;
+    private List<Consulta> consultas;
 
     public Paciente() {
     }
@@ -76,5 +76,12 @@ public class Paciente {
 
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public List<Consulta> getConsultas() {
+        return consultas;
+    }
+    public void setConsultas(List<Consulta> consultas) {
+        this.consultas = consultas;
     }
 }

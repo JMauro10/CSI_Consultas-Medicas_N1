@@ -20,7 +20,7 @@ public class MedicoService {
     public Medico findByIdMedico(Integer id) {
         return medicoRepository.findById(id).orElse(null);
     }
-    public List<Medico> findAll(){
+    public List<Medico> findAllMedico(){
         return medicoRepository.findAll();
     }
     public void delete(int id) {
@@ -30,13 +30,13 @@ public class MedicoService {
         return medicoRepository.save(medico);
     }
     public List<Medico> findByEspecialidade(String especialidade) {
-        return medicoRepository.findAll();
+        return medicoRepository.findByEspecialidade(especialidade);
     }
     public List<Medico> findByNomeMedico(String nomeMedico) {
-        return medicoRepository.findAll();
+        return medicoRepository.findByNomeMedico(nomeMedico);
     }
     public List<Medico> findByCrm(Integer crm) {
-        return medicoRepository.findAll();
+        return medicoRepository.findByCrm(crm);
     }
 
 }

@@ -13,11 +13,14 @@ public class Consulta {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "dataConsulta", nullable = false, length = 100)
-    private Date dataConsulta;
+    @Column(name = "dataConsulta", length = 100)
+    private String dataConsulta;
 
-    @Column(name = "horarioConsulta", nullable = false, length = 100)
-    private Time horarioConsulta;
+    @Column(name = "horarioConsulta", length = 100)
+    private String horarioConsulta;
+
+    @Enumerated(EnumType.STRING)
+    private StatusConsulta status;
 
     @ManyToOne
     @JoinColumn(name = "medicos[id]")
@@ -30,10 +33,11 @@ public class Consulta {
     public Consulta() {
     }
 
-    public Consulta(Integer id, Date dataConsulta, Time horarioConsulta, Medico medico, Paciente paciente) {
+    public Consulta(Integer id, String dataConsulta, String horarioConsulta, StatusConsulta status, Medico medico, Paciente paciente) {
         this.id = id;
         this.dataConsulta = dataConsulta;
         this.horarioConsulta = horarioConsulta;
+        this.status = status;
         this.medico = medico;
         this.paciente = paciente;
     }
@@ -46,20 +50,28 @@ public class Consulta {
         this.id = id;
     }
 
-    public Date getDataConsulta() {
+    public String getDataConsulta() {
         return dataConsulta;
     }
 
-    public void setDataConsulta(Date dataConsulta) {
+    public void setDataConsulta(String dataConsulta) {
         this.dataConsulta = dataConsulta;
     }
 
-    public Time getHorarioConsulta() {
+    public String getHorarioConsulta() {
         return horarioConsulta;
     }
 
-    public void setHorarioConsulta(Time horarioConsulta) {
+    public void setHorarioConsulta(String horarioConsulta) {
         this.horarioConsulta = horarioConsulta;
+    }
+
+    public StatusConsulta getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusConsulta status) {
+        this.status = status;
     }
 
     public Medico getMedico() {
